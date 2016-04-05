@@ -4,6 +4,9 @@
   "description": "Example using ES6 Promises.",
   "main": "src/main.js",
   "author": "Wes Reid",
+  "scripts": {
+    "test": "mocha"
+  },
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.0.6",
