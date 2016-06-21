@@ -4,7 +4,15 @@
 
 > [Mozilla - Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
-To setup this project, simply run `npm install`. Then, follow the instructions in the `instructions` folder.
+To setup this project:
+
+1. Run `npm install`
+1. Follow the instructions in the `instructions` folder
+
+To run tests for this project:
+
+1. Update the spec you want to run from `xit` to `it`
+1. Run `npm test`
 
 ### Objectives
 
