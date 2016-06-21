@@ -8,6 +8,7 @@ To setup this project:
 
 1. Run `npm install`
 1. Follow the instructions in the `instructions` folder
+1. Implement solutions in the `src` folder
 
 To run tests for this project:
 
