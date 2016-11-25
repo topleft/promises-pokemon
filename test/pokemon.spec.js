@@ -1,13 +1,13 @@
 var chai              = require('chai'),
     chaiAsPromised    = require('chai-as-promised'),
     should            = chai.should(),
-    expectedResponses = require('./expected/responses'),
+    expectedResponses = require('./expected/v2/responses'),
     PokemonAPI        = require('../src/pokemon').api,
     Promise           = require('bluebird')
-    // Replay            = require('Replay');
+    Replay            = require('Replay');
 chai.use(chaiAsPromised);
 
-// Replay.fixtures = './test/fixtures';
+Replay.fixtures = './test/fixtures';
 
 function res (result) {
   return result;
@@ -27,22 +27,23 @@ describe('PokemonAPI', function () {
     });
 
     it('returns an object with the pokemon by name', function () {
+      this.timeout(5000)
       var expected = expectedResponses.pokemon;
       return api.pokemon('pikachu').done().should.eventually.deep.equal(expected);
     });
 
-    xit('returns an object with the pokemon by number', function () {
+    it('returns an object with the pokemon by number', function () {
       var expected = expectedResponses.pokemon;
       return api.pokemon(25).done().should.eventually.deep.equal(expected);
     });
 
-    xit('is case insensitive', function () {
+    it('is case insensitive', function () {
       var expected = expectedResponses.pokemon;
       return api.pokemon('Pikachu').done().should.eventually.deep.equal(expected);
     });
   });
 
-  xdescribe('.done()', function () {
+  describe('.done()', function () {
     it('returns a promise if no callback is passed', function () {
       var pokePromise = api.pokemon('pikachu').done();
       (pokePromise.constructor).should.equal(Promise);
@@ -50,11 +51,11 @@ describe('PokemonAPI', function () {
 
     it('can take a callback function that operates on the returned promise\'s value', function () {
       var callback = function (result) { return 'Go, ' + result.name + '!'; }
-      return api.pokemon('pikachu').done(callback).should.eventually.equal('Go, Pikachu!');
+      return api.pokemon('pikachu').done(callback).should.eventually.equal('Go, pikachu!');
     });
   });
 
-  xdescribe('.abilities()', function () {
+  describe('.abilities()', function () {
     it('throws an error if there is no pokemon method chained before', function () {
         var expected = 'A Pokemon is required to use this method!';
         return api.abilities().done().should.be.rejectedWith(expected);

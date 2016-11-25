@@ -1,0 +1,15 @@
+GET /api/v2/pokemon/25
+host: pokeapi.co
+
+HTTP/1.1 301 MOVED PERMANENTLY
+date: Fri, 25 Nov 2016 21:27:31 GMT
+content-type: text/html; charset=utf-8
+transfer-encoding: chunked
+connection: close
+set-cookie: __cfduid=de1b3320cb2a2040ab9e0b5edaad138c51480109250; expires=Sat, 25-Nov-17 21:27:30 GMT; path=/; domain=.pokeapi.co; HttpOnly
+x-frame-options: SAMEORIGIN
+location: http://pokeapi.co/api/v2/pokemon/25/
+x-xss-protection: 1; mode=block
+server: cloudflare-nginx
+cf-ray: 30782f62b7145023-DEN
+

@@ -1,0 +1,15 @@
+GET /api/v2/pokemon/bulbasaur
+host: pokeapi.co
+
+HTTP/1.1 301 MOVED PERMANENTLY
+date: Fri, 25 Nov 2016 18:23:25 GMT
+content-type: text/html; charset=utf-8
+transfer-encoding: chunked
+connection: close
+set-cookie: __cfduid=d86e918f5c3d0edc8fa63de7b9ad74d041480098205; expires=Sat, 25-Nov-17 18:23:25 GMT; path=/; domain=.pokeapi.co; HttpOnly
+x-frame-options: SAMEORIGIN
+location: http://pokeapi.co/api/v2/pokemon/bulbasaur/
+x-xss-protection: 1; mode=block
+server: cloudflare-nginx
+cf-ray: 307721b711044fe7-DEN
+

@@ -1,0 +1,15 @@
+GET /api/v2/pokemon/pikachu
+host: pokeapi.co
+
+HTTP/1.1 301 MOVED PERMANENTLY
+date: Fri, 25 Nov 2016 21:27:30 GMT
+content-type: text/html; charset=utf-8
+transfer-encoding: chunked
+connection: close
+set-cookie: __cfduid=d8ad4977c79559d21b8c820d85ddc69f71480109250; expires=Sat, 25-Nov-17 21:27:30 GMT; path=/; domain=.pokeapi.co; HttpOnly
+x-frame-options: SAMEORIGIN
+location: http://pokeapi.co/api/v2/pokemon/pikachu/
+x-xss-protection: 1; mode=block
+server: cloudflare-nginx
+cf-ray: 30782f6017035017-DEN
+
