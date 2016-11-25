@@ -2,25 +2,25 @@ var chai              = require('chai'),
     chaiAsPromised    = require('chai-as-promised'),
     should            = chai.should(),
     expectedResponses = require('./expected/responses'),
-    PokemonAPI        = require('../src/pokemon'),
-    Promise           = require('bluebird'),
-    Replay            = require('Replay');
+    PokemonAPI        = require('../src/pokemon').api,
+    Promise           = require('bluebird')
+    // Replay            = require('Replay');
 chai.use(chaiAsPromised);
 
-Replay.fixtures = './test/fixtures';
+// Replay.fixtures = './test/fixtures';
 
 function res (result) {
   return result;
 }
 
-describe('PokemonAPI', function () {  
+describe('PokemonAPI', function () {
   var api;
 
   beforeEach(function () {
     api = new PokemonAPI();
   });
-  
-  xdescribe('.pokemon()', function () {
+
+  describe('.pokemon()', function () {
     it('throws an error if there is no parameter', function () {
       var expected = 'A Pokemon is required to use this method!';
       return api.pokemon().done().should.be.rejectedWith(expected);
@@ -31,12 +31,12 @@ describe('PokemonAPI', function () {
       return api.pokemon('pikachu').done().should.eventually.deep.equal(expected);
     });
 
-    it('returns an object with the pokemon by number', function () {
+    xit('returns an object with the pokemon by number', function () {
       var expected = expectedResponses.pokemon;
       return api.pokemon(25).done().should.eventually.deep.equal(expected);
     });
 
-    it('is case insensitive', function () {
+    xit('is case insensitive', function () {
       var expected = expectedResponses.pokemon;
       return api.pokemon('Pikachu').done().should.eventually.deep.equal(expected);
     });
